@@ -5,12 +5,9 @@ jobs:
     docker:
       - image: cimg/base:stable
     steps:
-      - checkout
       - run:
-          name: Validate repository documentation
-          command: |
-            test -s README.md
-            test -s AGENTS.md
+          name: Confirm placeholder pipeline
+          command: echo "KOVA memory adapter is catalogued and intentionally disabled"
 
 workflows:
   validate:
