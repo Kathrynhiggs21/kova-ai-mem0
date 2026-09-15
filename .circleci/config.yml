@@ -1,0 +1,18 @@
+version: 2.1
+
+jobs:
+  validate:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run:
+          name: Validate repository documentation
+          command: |
+            test -s README.md
+            test -s AGENTS.md
+
+workflows:
+  validate:
+    jobs:
+      - validate
